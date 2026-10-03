@@ -499,6 +499,96 @@
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important;}
   }
+  /* ---- いま見てほしいガイド(ピックアップ枠) ---- */
+  .pickup{
+    display:block;
+    position:relative;
+    margin:16px 0 0;
+    padding:16px 18px 16px 20px;
+    background:var(--surface);
+    border:1.5px solid var(--accent);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    color:var(--ink);
+    text-decoration:none;
+    overflow:hidden;
+  }
+  .pickup::before{
+    content:"";
+    position:absolute;
+    top:0; bottom:0; left:0;
+    width:6px;
+    background:var(--accent);
+  }
+  .pickup-label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--ink-soft);
+    letter-spacing:0.04em;
+  }
+  .pickup-new{
+    display:inline-block;
+    padding:1px 8px;
+    border-radius:999px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    font-family:"JetBrains Mono",ui-monospace,monospace;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+  }
+  .pickup-title{
+    margin:6px 0 2px;
+    font-family:"Shippori Mincho",serif;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.45;
+    text-wrap:balance;
+  }
+  .pickup-desc{
+    margin:0;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .pickup-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:12px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    font-size:13.5px;
+    font-weight:700;
+  }
+  .pickup-btn svg{width:14px;height:14px;flex:none;}
+  .pickup-btn{text-decoration:none;}
+  .pickup-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:12px;
+  }
+  .pickup-actions .pickup-btn{margin-top:0;}
+  .pickup-tool{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 14px;
+    border-radius:999px;
+    border:1.5px solid var(--accent);
+    background:transparent;
+    color:var(--ink);
+    font-size:13.5px;
+    font-weight:700;
+    text-decoration:none;
+  }
+  .pickup-tool svg{width:14px;height:14px;flex:none;}
+  .pickup-note{margin:6px 0 0;font-size:11.5px;color:var(--ink-soft);}
+  .pickup:active{transform:translateY(1px);}
 </style>
 </head>
 <body>
@@ -512,8 +602,19 @@
   </div>
   <div class="record-date">
     <svg viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.3"/><path d="M10 6v4l2.6 1.6"/></svg>
-    最終記帳日：2026.10.02
+    最終記帳日：2026.10.03
   </div>
+
+  <div class="pickup">
+  <div class="pickup-label"><span class="pickup-new">NEW</span>いま見てほしいガイド</div>
+  <p class="pickup-title">【完全版】2026年 年末調整ガイド</p>
+  <p class="pickup-desc">今年の変更点を、記入例つきでまとめたよ</p>
+  <div class="pickup-actions">
+    <a class="pickup-btn" data-goatcounter-click="ガイド：年末調整完全版" data-goatcounter-title="ガイド：年末調整完全版" href="https://drive.google.com/file/d/1AOtROv6z41fN8dz2fju0joL8H3Dt1GPl/view?usp=sharing" target="_blank" rel="noopener">ガイドを見る <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4l6 6-6 6"/></svg></a>
+    <a class="pickup-tool" data-goatcounter-click="ツール：年末調整自動計算" data-goatcounter-title="ツール：年末調整自動計算" href="https://tax.mykomon.com/tool-nen2020.html" target="_blank" rel="noopener">自動計算ツール <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4l6 6-6 6"/></svg></a>
+  </div>
+  <p class="pickup-note">自動計算ツール：給与収入から所得金額が出るよ（外部サイト）</p>
+</div>
 
   <div class="tap-hint" aria-hidden="true">
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/><path d="M10 3.5v2M10 14.5v2M3.5 10h2M14.5 10h2" stroke-linecap="round"/></svg>
@@ -555,17 +656,17 @@
               <div class="label">招待コード</div>
               <div class="code mono">ixyhwbn</div>
             </div>
-            <button class="copy-btn" data-copy="ixyhwbn" type="button">
+            <button class="copy-btn" data-goatcounter-click="コピー：エアウォレット招待コード" data-goatcounter-title="コピー：エアウォレット招待コード" data-copy="ixyhwbn" type="button">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M4.5 13V4.5A1.5 1.5 0 0 1 6 3h8.5"/></svg>
               コピー
             </button>
           </div>
-          <a class="btn" href="https://coinplus.go.link/jH372" target="_blank" rel="noopener">
+          <a class="btn" data-goatcounter-click="公式：エアウォレット" data-goatcounter-title="公式：エアウォレット" href="https://coinplus.go.link/jH372" target="_blank" rel="noopener">
             アプリをDL
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l6 6-6 6"/></svg>
           </a>
         </div>
-        <a class="detail-link" href="https://drive.google.com/file/d/10rgHh73LVxwNgUw2zyMTgRRktN5LAsIs/view?usp=sharing" target="_blank" rel="noopener">
+        <a class="detail-link" data-goatcounter-click="ガイド：エアウォレット" data-goatcounter-title="ガイド：エアウォレット" href="https://drive.google.com/file/d/10rgHh73LVxwNgUw2zyMTgRRktN5LAsIs/view?usp=sharing" target="_blank" rel="noopener">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2.5h6l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-14a1 1 0 0 1 1-1Z"/><path d="M12 2.5v3h3"/><path d="M7 11h6M7 14h6"/></svg>
           くわしいガイド(PDF)を見る →
         </a>
@@ -582,7 +683,7 @@
         </div>
         <p class="desc">実際に買ってよかったものだけ集めてるルーム。ポチる前にチェックしてみてね。</p>
         <div class="row2">
-          <a class="btn" href="https://room.rakuten.co.jp/room_e1940debc5/items" target="_blank" rel="noopener">
+          <a class="btn" data-goatcounter-click="公式：楽天ROOM" data-goatcounter-title="公式：楽天ROOM" href="https://room.rakuten.co.jp/room_e1940debc5/items" target="_blank" rel="noopener">
             ROOMを見る
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l6 6-6 6"/></svg>
           </a>
@@ -600,7 +701,7 @@
         </div>
         <p class="desc">電気代を見直したい人向け。紹介リンク経由の申し込みで特典があるよ。</p>
         <div class="row2">
-          <a class="btn" href="https://octopusenergy.co.jp/friend/lotus-dodo-728" target="_blank" rel="noopener">
+          <a class="btn" data-goatcounter-click="公式：オクトパスエナジー" data-goatcounter-title="公式：オクトパスエナジー" href="https://octopusenergy.co.jp/friend/lotus-dodo-728" target="_blank" rel="noopener">
             紹介ページを見る
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l6 6-6 6"/></svg>
           </a>
@@ -623,17 +724,17 @@
               <div class="label">招待コード</div>
               <div class="code mono">2Lsze1e6</div>
             </div>
-            <button class="copy-btn" data-copy="2Lsze1e6" type="button">
+            <button class="copy-btn" data-goatcounter-click="コピー：モッピー招待コード" data-goatcounter-title="コピー：モッピー招待コード" data-copy="2Lsze1e6" type="button">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M4.5 13V4.5A1.5 1.5 0 0 1 6 3h8.5"/></svg>
               コピー
             </button>
           </div>
-          <a class="btn" href="https://pc.moppy.jp/entry/invite.php?invite=2Lsze1e6&amp;openExternalBrowser=1" target="_blank" rel="noopener">
+          <a class="btn" data-goatcounter-click="公式：モッピー" data-goatcounter-title="公式：モッピー" href="https://pc.moppy.jp/entry/invite.php?invite=2Lsze1e6&amp;openExternalBrowser=1" target="_blank" rel="noopener">
             登録はこちら
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l6 6-6 6"/></svg>
           </a>
         </div>
-        <a class="detail-link" href="https://claude.ai/code/artifact/70d4cd5a-6710-40dc-a5fa-9b553b4b43cc" target="_blank" rel="noopener">
+        <a class="detail-link" data-goatcounter-click="ガイド：モッピー" data-goatcounter-title="ガイド：モッピー" href="https://claude.ai/code/artifact/70d4cd5a-6710-40dc-a5fa-9b553b4b43cc" target="_blank" rel="noopener">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2.5h6l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-14a1 1 0 0 1 1-1Z"/><path d="M12 2.5v3h3"/><path d="M7 11h6M7 14h6"/></svg>
           やり方を見る →
         </a>
@@ -651,12 +752,12 @@
         <p class="desc">1口1万円から始められる不動産クラウドファンディング。私も実際に登録・出資してみたよ。</p>
         <p style="grid-column:1 / -1;font-size:10.5px;color:var(--ink-soft);margin:2px 0 0;">※この投稿は情報提供が目的で、出資の推奨や利益の保証はしていません。投資は元本保証がないので、最終判断はご自身でお願いします。※2026/9時点の情報です。</p>
         <div class="row2">
-          <a class="btn" href="https://stair-s.com/link.php?i=pi7ksr2surwb&amp;m=mihj6wr1buac" target="_blank" rel="noopener">
+          <a class="btn" data-goatcounter-click="公式：TORCHES" data-goatcounter-title="公式：TORCHES" href="https://stair-s.com/link.php?i=pi7ksr2surwb&amp;m=mihj6wr1buac" target="_blank" rel="noopener">
             公式サイトを見る
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l6 6-6 6"/></svg>
           </a>
         </div>
-        <a class="detail-link" href="https://drive.google.com/file/d/1H4RIVdnAoNwbbTFL_TgauSJZvANnvEJ8/view?usp=sharing" target="_blank" rel="noopener">
+        <a class="detail-link" data-goatcounter-click="ガイド：TORCHES" data-goatcounter-title="ガイド：TORCHES" href="https://drive.google.com/file/d/1H4RIVdnAoNwbbTFL_TgauSJZvANnvEJ8/view?usp=sharing" target="_blank" rel="noopener">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2.5h6l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-14a1 1 0 0 1 1-1Z"/><path d="M12 2.5v3h3"/><path d="M7 11h6M7 14h6"/></svg>
           くわしいガイド(PDF)を見る →
         </a>
@@ -674,12 +775,12 @@
         <p class="desc">2026年9月スタートの不動産クラウドファンディング。東証プライム上場グループが運営。私も実際に登録してみたよ。</p>
         <p style="grid-column:1 / -1;font-size:10.5px;color:var(--ink-soft);margin:2px 0 0;">※この投稿は情報提供が目的で、出資の推奨や利益の保証はしていません。投資は元本保証がないので、最終判断はご自身でお願いします。※2026/9時点の情報です。</p>
         <div class="row2">
-          <a class="btn" href="https://stair-s.com/link.php?i=pi8hesjwdgnm&amp;m=mihj6wr1buac" target="_blank" rel="noopener">
+          <a class="btn" data-goatcounter-click="公式：REALE" data-goatcounter-title="公式：REALE" href="https://stair-s.com/link.php?i=pi8hesjwdgnm&amp;m=mihj6wr1buac" target="_blank" rel="noopener">
             公式サイトを見る
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l6 6-6 6"/></svg>
           </a>
         </div>
-        <a class="detail-link" href="https://drive.google.com/file/d/1981Rql7f2OxMRwrX6ZXvYq9Y6WiVkHe6/view?usp=sharing" target="_blank" rel="noopener">
+        <a class="detail-link" data-goatcounter-click="ガイド：REALE" data-goatcounter-title="ガイド：REALE" href="https://drive.google.com/file/d/1981Rql7f2OxMRwrX6ZXvYq9Y6WiVkHe6/view?usp=sharing" target="_blank" rel="noopener">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2.5h6l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-14a1 1 0 0 1 1-1Z"/><path d="M12 2.5v3h3"/><path d="M7 11h6M7 14h6"/></svg>
           くわしいガイド(PDF)を見る →
         </a>
@@ -697,12 +798,12 @@
         <p class="desc">自社物件も多い不動産クラウドファンディング。私も実際に登録して、もう3つのファンドに出資してるよ。</p>
         <p style="grid-column:1 / -1;font-size:10.5px;color:var(--ink-soft);margin:2px 0 0;">※この投稿は情報提供が目的で、出資の推奨や利益の保証はしていません。投資は元本保証がないので、最終判断はご自身でお願いします。※2026/10時点の情報です。</p>
         <div class="row2">
-          <a class="btn" href="https://stair-s.com/link.php?i=phvdj6ebrht7&amp;m=mihj6wr1buac" target="_blank" rel="noopener">
+          <a class="btn" data-goatcounter-click="公式：GATES" data-goatcounter-title="公式：GATES" href="https://stair-s.com/link.php?i=phvdj6ebrht7&amp;m=mihj6wr1buac" target="_blank" rel="noopener">
             公式サイトを見る
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4l6 6-6 6"/></svg>
           </a>
         </div>
-        <a class="detail-link" href="https://drive.google.com/file/d/1T7xeWB1LCUj9btQD_WsfLWWgyxkeAjFH/view?usp=sharing" target="_blank" rel="noopener">
+        <a class="detail-link" data-goatcounter-click="ガイド：GATES" data-goatcounter-title="ガイド：GATES" href="https://drive.google.com/file/d/1T7xeWB1LCUj9btQD_WsfLWWgyxkeAjFH/view?usp=sharing" target="_blank" rel="noopener">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2.5h6l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-14a1 1 0 0 1 1-1Z"/><path d="M12 2.5v3h3"/><path d="M7 11h6M7 14h6"/></svg>
           くわしいガイド(PDF)を見る →
         </a>
@@ -736,15 +837,15 @@
       <h2 id="follow-h">フォローしてね</h2>
     </div>
     <div class="follow">
-      <a href="https://www.instagram.com/nako_moneylife50/" target="_blank" rel="noopener">
+      <a data-goatcounter-click="フォロー：Instagram" data-goatcounter-title="フォロー：Instagram" href="https://www.instagram.com/nako_moneylife50/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
         <span>Instagram</span>
       </a>
-      <a href="https://www.threads.net/@nako_moneylife50" target="_blank" rel="noopener">
+      <a data-goatcounter-click="フォロー：Threads" data-goatcounter-title="フォロー：Threads" href="https://www.threads.net/@nako_moneylife50" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3c4.5 0 7.5 2.8 7.5 8.2 0 5-2.6 9-7.6 9-4.3 0-6.9-2.6-6.9-5.9 0-3.4 3-5.3 7-5.1 2 .1 3.4.8 4.2 1.6"/><path d="M13.6 9.6c-2.6-.4-4.9.6-4.9 2.7 0 1.6 1.4 2.4 2.9 2.3 2-.1 3-1.6 3-4.3 0-4-1.7-6.2-4.8-6.2-2 0-3.5.9-4.4 2.1"/></svg>
         <span>Threads</span>
       </a>
-      <a href="https://note.com/deft_python2374" target="_blank" rel="noopener">
+      <a data-goatcounter-click="フォロー：note" data-goatcounter-title="フォロー：note" href="https://note.com/deft_python2374" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h7M9 16h5"/></svg>
         <span>note</span>
         <small>親の介護のこと</small>
@@ -784,5 +885,6 @@
     });
   });
 </script>
+<script data-goatcounter="https://nako-otoku.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
